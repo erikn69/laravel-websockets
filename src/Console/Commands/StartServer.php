@@ -62,7 +62,7 @@ class StartServer extends Command
     {
         parent::__construct();
 
-        $this->loop = LoopFactory::create();
+        $this->loop = LoopFactory::get();
     }
 
     /**

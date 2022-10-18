@@ -6,7 +6,7 @@ use BeyondCode\LaravelWebSockets\Server\HttpServer;
 use BeyondCode\LaravelWebSockets\Server\Loggers\HttpLogger;
 use Ratchet\Http\Router;
 use Ratchet\Server\IoServer;
-use React\EventLoop\Factory as LoopFactory;
+use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
 use React\Socket\SecureServer;
 use React\Socket\SocketServer;
@@ -64,7 +64,7 @@ class ServerFactory
         $this->host = $host;
         $this->port = $port;
 
-        $this->loop = LoopFactory::get();
+        $this->loop = Loop::get();
     }
 
     /**
